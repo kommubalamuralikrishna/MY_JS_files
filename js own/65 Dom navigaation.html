@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Navigation Example</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 10px;
+            border: 1px solid black;
+            width: 200px;
+        }
+        li {
+            padding: 5px;
+            margin: 3px;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>DOM Navigation Example</h2>
+
+    <ul id="fruits">
+        <li id="apple">Apple</li>
+        <li id="orange">Orange</li>
+        <li id="banana">Banana</li>
+    </ul>
+
+    <ul id="vegetables">
+        <li id="carrot">Carrot</li>
+        <li id="onion">Onion</li>
+        <li id="potato">Potato</li>
+    </ul>
+
+    <ul id="desserts">
+        <li id="cake">Cake</li>
+        <li id="pie">Pie</li>
+        <li id="icecream">Ice Cream</li>
+    </ul>
+
+    <script>
+        // Selecting an element
+let fruitList = document.getElementById("fruits");
+
+// 1. firstElementChild - Select the first child of an element
+let firstChild = fruitList.firstElementChild;
+firstChild.style.backgroundColor = "yellow"; // Highlights "Apple"
+
+// 2. lastElementChild - Select the last child of an element
+let lastChild = fruitList.lastElementChild;
+lastChild.style.backgroundColor = "lightblue"; // Highlights "Banana"
+
+// 3. nextElementSibling - Select next sibling element
+let orange = document.getElementById("orange");
+let nextSibling = orange.nextElementSibling;
+nextSibling.style.backgroundColor = "lightgreen"; // Highlights "Banana"
+
+// 4. previousElementSibling - Select previous sibling element
+let prevSibling = orange.previousElementSibling;
+prevSibling.style.backgroundColor = "pink"; // Highlights "Apple"
+
+// 5. parentElement - Select parent of an element
+let parent = orange.parentElement;
+parent.style.border = "3px solid red"; // Highlights the parent <ul> (Fruits list)
+
+// 6. children - Select all children of an element
+let allChildren = fruitList.children;
+for (let child of allChildren) {
+    child.style.border = "2px solid purple"; // Adds a border around each <li>
+}
+
+// 7. Access child by index
+let secondChild = fruitList.children[1]; // Orange
+secondChild.style.fontWeight = "bold"; // Makes "Orange" bold
+
+// 8. Using querySelectorAll to apply to multiple lists
+let allLists = document.querySelectorAll("ul");
+allLists.forEach(list => {
+    list.firstElementChild.style.textDecoration = "underline"; // Underline first item in each list
+});
+    </script>
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //reduce->reduces the elements of the array into single element
+        //it consists an accumulator and element we can call them as prev,next
+        let num=[1,2,3,4,5]
+        let sum=num.reduce(add);
+        let maxi=num.reduce(max);
+        console.log(sum);
+        console.log(maxi);
+        function add(accumulator,element){
+            return accumulator+element;
+        }
+        function max(accumulator,element){
+            return Math.max(accumulator,element);
+        }
+
+    </script>
+</body>
+</html>

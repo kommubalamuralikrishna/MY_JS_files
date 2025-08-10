@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Demonstrating all slicing methods in JavaScript
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let str = "Hello, JavaScript Slicing!";
+
+// Array Slicing Methods
+console.log("Original Array:", arr.slice()); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log("Slice from index 3:", arr.slice(3)); // [4, 5, 6, 7, 8, 9, 10]
+console.log("Slice from index 2 to 6:", arr.slice(2, 6)); // [3, 4, 5, 6]
+console.log("Slice last 4 elements:", arr.slice(-4)); // [7, 8, 9, 10]
+console.log("Slice from -6 to -2:", arr.slice(-6, -2)); // [5, 6, 7, 8]
+console.log("Slice from index 3 to -3:", arr.slice(3, -3)); // [4, 5, 6, 7]
+console.log("Slice from index 20:", arr.slice(20)); // []
+console.log("Slice from index 3 to 20:", arr.slice(3, 20)); // [4, 5, 6, 7, 8, 9, 10]
+console.log("Slice from index 5 to 5:", arr.slice(5, 5)); // []
+
+let emptyArr = [];
+console.log("Slice on empty array:", emptyArr.slice(0, 2)); // []
+
+// String Slicing Methods
+console.log("Original String:", str); // Hello, JavaScript Slicing!
+console.log("Slice from index 7:", str.slice(7)); // JavaScript Slicing!
+console.log("Slice from index 0 to 5:", str.slice(0, 5)); // Hello
+console.log("Slice last 8 characters:", str.slice(-8)); // Slicing!
+console.log("Slice from -10 to -2:", str.slice(-10, -2)); // t Slicin
+console.log("Slice from index 6 to -7:", str.slice(6, -7)); // JavaScript 
+console.log("Slice from index 30:", str.slice(30)); // ""
+console.log("Slice from index 3 to 50:", str.slice(3, 50)); // lo, JavaScript Slicing!
+console.log("Slice from index 10 to 10 (empty):", str.slice(10, 10)); // ""
+
+let emptyStr = "";
+console.log("Slice on empty string:", emptyStr.slice(0, 2)); // ""
+
+    </script>
+</body>
+</html>

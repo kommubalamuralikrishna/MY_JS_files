@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Element Selectors</title>s
+</head>
+<body>
+<h1 id="my-heading">Food Are Us</h1>
+
+<div class="fruits">Apple</div>
+<div class="fruits">Orange</div>
+<div class="fruits">Banana</div>
+
+<h4>Root Vegetables</h4>
+<ul>
+  <li>Beets</li>
+  <li>Carrots</li>
+  <li>Potatoes</li>
+</ul>
+
+<h4>Non-root Vegetables</h4>
+<ul>
+  <li>Broccoli</li>
+  <li>Celery</li>
+  <li>Onions</li>
+</ul>
+
+<script>
+// 1. getElementById()
+const myHeading = document.getElementById("my-heading");
+myHeading.style.backgroundColor = "yellow";
+myHeading.style.textAlign = "center";
+
+// 2. getElementsByClassName()
+const fruits = document.getElementsByClassName("fruits");
+for (let fruit of fruits) {
+  fruit.style.backgroundColor = "orange";
+}
+
+// Convert HTMLCollection to Array and use forEach()
+Array.from(fruits).forEach(fruit => {
+  fruit.style.border = "2px solid green";
+});
+
+// 3. getElementsByTagName()
+const liElements = document.getElementsByTagName("li");
+for (let li of liElements) {
+  li.style.backgroundColor = "lightgreen";
+}
+
+// 4. querySelector()
+const firstFruit = document.querySelector(".fruits");
+firstFruit.style.color = "red";
+
+// 5. querySelectorAll()
+const allFoods = document.querySelectorAll("li");
+allFoods.forEach(food => {
+  food.style.color = "blue";
+});
+</script>
+</body>
+</html>

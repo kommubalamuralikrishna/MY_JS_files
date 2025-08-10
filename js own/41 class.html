@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class person{
+            
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+            }
+            lover="kavya";
+            display(){
+                console.log(`name:${this.name},age:${this.age}`);
+            }
+        }
+        let p1=new person("balu",20);
+        console.log(p1.lover);
+        p1.display();
+
+        //Class	It is a blueprint/template for creating objects. (Example: Person)
+        //Constructor	It is a special method that automatically executes when creating an object and initializes object properties. (Example: constructor(name, age))
+        //Object	It is an instance of the class that holds the actual values. (Example: person1)
+
+    </script>
+</body>
+</html>

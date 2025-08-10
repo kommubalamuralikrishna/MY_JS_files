@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // =============================
+//  JSON Basics in JavaScript
+// =============================
+
+// 1. Creating a JavaScript array
+const names = ["SpongeBob", "Patrick", "Squidward", "Sandy"];
+
+// Convert array to JSON string
+const jsonNames = JSON.stringify(names);
+console.log("JSON String (Array):", jsonNames);
+
+// Convert JSON string back to JavaScript array
+const parsedNames = JSON.parse(jsonNames);
+console.log("Parsed Array:", parsedNames);
+
+// -------------------------------------------
+
+// 2. Creating a JavaScript object
+const person = {
+  name: "SpongeBob",
+  age: 30,
+  isEmployed: true,
+  hobbies: ["jelly fishing", "karate", "cooking"]
+};
+
+// Convert object to JSON string
+const jsonPerson = JSON.stringify(person);
+console.log("JSON String (Object):", jsonPerson);
+
+// Convert JSON string back to JavaScript object
+const parsedPerson = JSON.parse(jsonPerson);
+console.log("Parsed Object:", parsedPerson);
+
+// -------------------------------------------
+
+// 3. Creating an array of objects
+const people = [
+  { name: "SpongeBob", age: 30, isEmployed: true },
+  { name: "Patrick", age: 34, isEmployed: false },
+  { name: "Squidward", age: 50, isEmployed: true },
+  { name: "Sandy", age: 27, isEmployed: false }
+];
+
+// Convert array of objects to JSON string
+const jsonPeople = JSON.stringify(people);
+console.log("JSON String (Array of Objects):", jsonPeople);
+
+// Convert JSON string back to JavaScript array of objects
+const parsedPeople = JSON.parse(jsonPeople);
+console.log("Parsed Array of Objects:", parsedPeople);
+
+// -------------------------------------------
+
+// 4. Fetching JSON data from a file (Simulating fetching "person.json")
+fetch("person.json")
+  .then(response => response.json()) // Convert response to JSON
+  .then(data => console.log("Fetched Person JSON:", data)) // Display data
+  .catch(error => console.error("Error fetching person.json:", error));
+
+// -------------------------------------------
+
+// 5. Fetching and iterating through an array of objects ("people.json")
+fetch("people.json")
+  .then(response => response.json()) // Convert response to JSON
+  .then(people => {
+    console.log("Fetched People JSON:");
+    people.forEach(person => {
+      console.log(`${person.name} is ${person.age} years old.`);
+    });
+  })
+  .catch(error => console.error("Error fetching people.json:", error));
+
+// -------------------------------------------
+
+// 6. Fetching and displaying specific properties
+fetch("people.json")
+  .then(response => response.json()) 
+  .then(people => {
+    console.log("Specific Properties from People JSON:");
+    people.forEach(person => {
+      console.log(`Name: ${person.name}, Employed: ${person.isEmployed}`);
+    });
+  })
+  .catch(error => console.error("Error fetching people.json:", error));
+
+// -------------------------------------------
+
+// 7. Handling fetch errors properly
+fetch("nonexistent.json") // This file doesn't exist (will trigger an error)
+  .then(response => response.json())
+  .then(data => console.log("This won't run since file doesn't exist."))
+  .catch(error => console.error("Error fetching nonexistent.json:", error));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //super=keyword is used to call the constructer or access the properties and methods of a parent(super class)
+        //this=this object
+        //super=the parent
+        // Parent Class
+class Animal {
+    constructor(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+  
+    move(speed) {
+      console.log(`${this.name} moves at a speed of ${speed} mph`);
+    }
+  }
+  
+  // Child Classes
+  class Rabbit extends Animal {
+    constructor(name, age, runSpeed) {
+      super(name, age);
+      this.runSpeed = runSpeed;
+    }
+  
+    run() {
+      console.log(`${this.name} can run`);
+      super.move(this.runSpeed);
+    }
+  }
+  
+  class Fish extends Animal {
+    constructor(name, age, swimSpeed) {
+      super(name, age);
+      this.swimSpeed = swimSpeed;
+    }
+  
+    swim() {
+      console.log(`${this.name} can swim`);
+      super.move(this.swimSpeed);
+    }
+  }
+  
+  class Hawk extends Animal {
+    constructor(name, age, flySpeed) {
+      super(name, age);
+      this.flySpeed = flySpeed;
+    }
+  
+    fly() {
+      console.log(`${this.name} can fly`);
+      super.move(this.flySpeed);
+    }
+  }
+  
+  // Object Creation and Testing
+  const rabbit = new Rabbit("Rabbit", 1, 25);
+  rabbit.run();
+  
+  const fish = new Fish("Fish", 2, 12);
+  fish.swim();
+  
+  const hawk = new Hawk("Hawk", 3, 50);
+  hawk.fly();
+  
+    </script>
+</body>
+</html>

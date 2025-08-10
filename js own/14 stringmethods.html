@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All String Methods</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 1.5em;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: aqua;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: brown;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h1>All String Methods in JavaScript 🔥</h1>
+<button onclick="stringMethods()">Click to Show All Methods</button>
+<div id="output"></div>
+
+<script>
+    function stringMethods() {
+        let text = "Balu Kavya";
+        let output = "";
+
+        // Length
+        output += "Length: " + text.length + "<br>";
+
+        // charAt()
+        output += "charAt(2): " + text.charAt(2) + "<br>";
+
+        // toUpperCase()
+        output += "UpperCase: " + text.toUpperCase() + "<br>";
+
+        // toLowerCase()
+        output += "LowerCase: " + text.toLowerCase() + "<br>";
+
+        // slice()
+        output += "Slice(0, 4): " + text.slice(0, 4) + "<br>";
+
+        // split()
+        output += "Split: " + text.split(" ") + "<br>";
+
+        // indexOf()
+        output += "indexOf('a'): " + text.indexOf("a") + "<br>";
+
+        // includes()
+        output += "Includes('Balu'): " + text.includes("Balu") + "<br>";
+
+        // replace()
+        output += "Replace 'Balu' with 'King': " + text.replace("Balu", "King") + "<br>";
+
+        // startsWith()
+        output += "StartsWith('Balu'): " + text.startsWith("Balu") + "<br>";
+
+        // endsWith()
+        output += "EndsWith('Kavya'): " + text.endsWith("Kavya") + "<br>";
+
+        // trim()
+        let newText = "   Balu   ";
+        output += "Trim: " + newText.trim() + "<br>";
+
+        // repeat()
+        output += "Repeat: " + text.repeat(2) + "<br>";
+
+        // concat()
+        output += "Concat: " + text.concat(" Love") + "<br>";
+
+        // padStart()
+        output += "PadStart: " + text.padStart(15, "*") + "<br>";
+
+        // padEnd()
+        output += "PadEnd: " + text.padEnd(15, "*") + "<br>";
+
+        // match()
+        output += "Match: " + text.match(/a/g) + "<br>";
+
+        document.getElementById("output").innerHTML = output;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Mouse Events</title>
+    <style>
+        /* Styling for the box */
+#myBox {
+    background-color: lightgreen; /* Default background color */
+    width: 300px;
+    height: 300px;
+    font-size: 4.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+/* Styling for the button */
+#myButton {
+    font-size: 3rem;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- A div box that will change color and text when interacted with -->
+    <div id="myBox">Click Me! 🖱</div>
+
+    <!-- A button that will control the box's appearance -->
+    <button id="myButton">Click Me</button>
+
+    <script>
+        // Select the box element
+const myBox = document.getElementById("myBox");
+
+// Add a 'click' event listener to change background color and text
+myBox.addEventListener("click", function(event) {
+    // Change background color to tomato
+    event.target.style.backgroundColor = "tomato";
+    
+    // Change text content
+    event.target.textContent = "Ouch! 😲";
+});
+
+// Add a 'mouseover' event listener to change appearance on hover
+myBox.addEventListener("mouseover", (event) => {
+    event.target.style.backgroundColor = "yellow"; // Change background color
+    event.target.textContent = "Don't do it! 😨"; // Change text
+});
+
+// Add a 'mouseout' event listener to revert back to original
+myBox.addEventListener("mouseout", (event) => {
+    event.target.style.backgroundColor = "lightgreen"; // Revert background color
+    event.target.textContent = "Click Me! 🖱"; // Revert text
+});
+
+// Select the button element
+const myButton = document.getElementById("myButton");
+
+// Add a click event listener to change the box instead of the button
+myButton.addEventListener("click", () => {
+    myBox.style.backgroundColor = "blue"; // Change box color
+    myBox.textContent = "Whoa! 😎"; // Change box text
+});
+
+// Add a mouseover event listener to change the box when hovering over the button
+myButton.addEventListener("mouseover", () => {
+    myBox.style.backgroundColor = "purple"; // Change box color
+    myBox.textContent = "Something's happening! 🤔"; // Change box text
+});
+
+// Add a mouseout event listener to reset box when leaving the button
+myButton.addEventListener("mouseout", () => {
+    myBox.style.backgroundColor = "lightgreen"; // Reset box color
+    myBox.textContent = "Click Me! 🖱"; // Reset box text
+});
+
+    </script>
+</body>
+</html>

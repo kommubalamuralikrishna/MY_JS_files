@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BMK</h1>
+    <p id="welcome-msg">welcome </p>
+    <script>
+        // The Document Object Model (DOM) allows JavaScript to interact with HTML
+// The 'document' object represents the entire HTML page
+
+// Example: Changing the page title dynamically
+console.log(document.title); // Logs the current title of the webpage
+
+document.title = "My Website"; // Changes the title dynamically
+console.log(document.title); // Logs the new title "My Website"
+
+// Example: Changing the background color dynamically
+// Access the body element, then style property to modify CSS directly
+
+document.body.style.backgroundColor = "red"; // Dark mode background
+
+// Creating an H1 element dynamically and updating its content
+// First, assume there is an H1 element with the ID 'welcome-msg' in HTML
+
+const username = "Bro Code"; // Simulating user input
+const welcomeMessage = document.getElementById("welcome-msg"); // Select element by ID
+
+// Update text content conditionally using ternary operator
+welcomeMessage.textContent = `Welcome ${username === "" ? "Guest" : username}`;
+
+// This checks if the username is empty, then displays 'Guest', otherwise shows the username
+
+console.log(welcomeMessage.textContent); // Logs the final welcome message
+
+    </script>
+</body>
+</html>

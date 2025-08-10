@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+        // the this keyword refers to the current object based on how the function is called.
+        let person = {
+            name: "Balu",
+            age: 20,
+            show: function () {
+              console.log(`my name is ${this.name}`); // Balu
+            }
+          };
+          person.show();
+          /*
+            let person = {
+            name: "Balu",
+            show: () => {
+            console.log(this.name);
+                }
+            };
+            person.show();
+            output is undefined=>this cannot work in arrow function/
+          */
+          //console.log(this);  Output (Browser): Window Object
+          let obj = {
+            name: "Balu"
+          };
+          
+          function display() {
+            console.log(this.name);
+          }
+          
+          display.call(obj); // Balu
+          
+    </script>
+ </body>
+ </html>

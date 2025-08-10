@@ -1,0 +1,17 @@
+#content{
+    display: block;
+    font-size: 10em;
+    text-align: center;
+}
+.bt{
+    text-align: center;
+}
+.btt{
+    padding: 10px 20px;
+    font-size: 1.5em;
+    background-color: aqua;
+    transition:background-color 0.25s;
+}
+.btt:hover{
+    background-color: brown;
+}

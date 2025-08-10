@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Example 1: Swap Two Variables
+let a = 1, b = 2;
+[a, b] = [b, a];
+console.log(a, b); // Output: 2 1
+
+// Example 2: Swap Two Elements in Array
+const colors = ["red", "green", "blue", "black", "white"];
+[colors[0], colors[4]] = [colors[4], colors[0]];
+console.log(colors); // Output: ["white", "green", "blue", "black", "red"]
+
+// Example 3: Assign Array Elements to Variables
+const [firstColor, secondColor, thirdColor, ...extraColors] = colors;
+console.log(firstColor); // Output: white
+console.log(secondColor); // Output: green
+console.log(thirdColor); // Output: blue
+console.log(extraColors); // Output: ["black", "red"]
+
+// Example 4: Extract Values from Objects
+const person1 = {
+  firstName: "SpongeBob",
+  lastName: "SquarePants",
+  age: 30,
+  job: "Fry Cook"
+};
+
+const person2 = {
+  firstName: "Patrick",
+  lastName: "Star",
+  age: 34
+};
+
+const { firstName, lastName, age, job = "Unemployed" } = person2;
+console.log(firstName, lastName, age, job); // Output: Patrick Star 34 Unemployed
+
+// Example 5: Destructuring in Function Parameters
+function displayPerson({ firstName, lastName, age, job = "Unemployed" }) {
+  console.log(`Name: ${firstName} ${lastName}`);
+  console.log(`Age: ${age}`);
+  console.log(`Job: ${job}`);
+}
+
+displayPerson(person1);
+displayPerson(person2);
+
+    </script>
+</body>
+</html>

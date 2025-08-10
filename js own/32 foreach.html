@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //forEach()=method used to iterate over elements of an array and apply a specified function(callback) to the elements
+        //array.forEach(callback)
+        //element,array,index are provided.these are inbuilt in forEach calling function
+        let num=[1,2,3,4];
+        num.forEach(display);
+        function display(element){
+            console.log(element)
+        }
+        num.forEach(square);
+        function square(element,index,array){
+            array[index]=element**2;
+        }
+        console.log("square of elemnts:");
+        num.forEach(display);
+
+        let fruits=["orange","banana","apple"];
+        fruits.forEach(capitalize);
+        //we can change the names of parameters but not positions
+        function capitalize(e,i,a){
+            a[i]=e.charAt(0).toUpperCase()+e.slice(1);
+        }
+        fruits.forEach(display);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <style>
+        body {
+            text-align: center;
+            font-size: 2em;
+            margin-top: 100px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: pink;
+            border: 5px solid ;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: brown;
+            color: white;
+            border-color: aqua;
+        }
+    </style>
+</head>
+<body>
+<h1>🎲 Dice Roller 🎲</h1>
+<div id="dice">Roll the Dice</div>
+<br>
+<button id="bt">Roll Dice</button>
+
+<script>
+    document.getElementById("bt").onclick=function() {
+        const dice = Math.floor(Math.random() * 6) + 1; // Random number from 1 to 6
+        document.getElementById("dice").textContent = "You Rolled: " + dice;
+        //at const you can use let
+    }
+</script>
+</body>
+</html>

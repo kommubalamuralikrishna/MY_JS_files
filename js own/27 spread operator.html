@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //spread operator allows an iterable such as an array or string to be expanded into seperate element.
+
+        let name="balu kommu";
+        let arr=[...name];
+        console.log(arr);//['b', 'a', 'l', 'u', ' ', 'k', 'o', 'm', 'm', 'u']
+        arr=[...name].join(' ');
+        console.log(arr);//b a l u   k o m m u
+        let fruits=["apple","banana","orange"];
+        let vegetables=["cucumber","potato","tomato"];
+        let foods=[...fruits,...vegetables,"milk","kavya"];
+        console.log(foods);//['apple', 'banana', 'orange', 'cucumber', 'potato', 'tomato', 'milk', 'kavya']
+    </script>
+</body>
+</html>

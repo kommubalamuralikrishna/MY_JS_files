@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 400px;
+            height: 400px;
+        }
+        button{
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://m.media-amazon.com/images/M/MV5BOGQ5YWFjYjItODE5OC00ZDQxLTk5ZmYtNzY0YzM4NjIyMWFlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" id="image" alt="ben img">
+    <br><br>
+    <button id="mybutton">hide</button>
+    <script>
+        let but=document.getElementById("mybutton");
+        let img=document.getElementById("image");
+         but.addEventListener("click",event=>{
+            if(img.style.visibility==="hidden"){
+                img.style.visibility="visible";
+                but.textContent="Hide";
+            }
+            else{
+                img.style.visibility="hidden";
+                but.textContent="show";
+            }
+
+         })
+    </script>
+</body>
+</html>

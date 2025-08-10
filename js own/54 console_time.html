@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+//it is compulsory for the code to work correctly that both the console.time(label) and console.timeEnd(label) methods have the same label (string).
+// Example 1: Measuring for loop execution time
+console.time("Loop 1 Million");
+for (let i = 0; i < 1000000; i++) {
+  // Simulate process
+}
+console.timeEnd("Loop 1 Million End");
+
+console.time("Loop 10 Million");
+for (let i = 0; i < 10000000; i++) {
+  // Simulate process
+}
+console.timeEnd("Loop 10 Million End");
+
+console.time("Loop 1 Billion");
+for (let i = 0; i < 1000000000; i++) {
+  // Simulate process
+}
+console.timeEnd("Loop 1 Billion End");
+
+// Example 2: Measuring function execution time
+function loadData() {
+  console.time("loadData");
+  for (let i = 0; i < 1000000000; i++) {
+    // Simulate loading data
+  }
+  console.timeEnd("loadData End");
+}
+
+function processData() {
+  console.time("processData");
+  for (let i = 0; i < 1000000; i++) {
+    // Simulate processing data
+  }
+  console.timeEnd("processData End");
+}
+
+// Execute functions
+loadData();
+processData();
+
+    </script>
+</body>
+</html>

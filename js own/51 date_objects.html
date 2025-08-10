@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Object in JS</title>
+</head>
+<body>
+    <h1>Date Object Example in JS</h1>
+
+    <script>
+        // 1️⃣ Creating Date Object
+        let currentDate = new Date();   // Current Date and Time
+        console.log("Current Date:", currentDate);
+
+        // 2️⃣ Get Date Methods
+        console.log("Year:", currentDate.getFullYear());  // Year
+        console.log("Month:", currentDate.getMonth());    // Month (0-11)
+        console.log("Date:", currentDate.getDate());      // Day of Month
+        console.log("Day:", currentDate.getDay());        // Day (0-Sunday to 6-Saturday)
+        console.log("Hours:", currentDate.getHours());    // Hours (0-23)
+        console.log("Minutes:", currentDate.getMinutes()); // Minutes
+        console.log("Seconds:", currentDate.getSeconds()); // Seconds
+
+        // 3️⃣ Set Date Methods
+        currentDate.setFullYear(2026);  // Set Year
+        console.log("After Setting Year:", currentDate);
+
+        currentDate.setMonth(10);       // March (Months start from 0)
+        console.log("After Setting Month:", currentDate);
+
+        currentDate.setDate(14);       // Set Date
+        console.log("After Setting Date:", currentDate);
+
+        // 4️⃣ Date Formatting
+        console.log("Date in String Format:", currentDate.toDateString());
+        console.log("Time in String Format:", currentDate.toTimeString());
+        console.log("Locale Date Format:", currentDate.toLocaleDateString());
+        console.log("Locale Time Format:", currentDate.toLocaleTimeString());
+
+        // 5️⃣ Time Methods
+        console.log("Milliseconds since 1970:", currentDate.getTime()); // Timestamp
+
+        // 6️⃣ Date Calculations
+        let tomorrow = new Date();
+        tomorrow.setDate(currentDate.getDate() + 1);
+        console.log("Tomorrow's Date:", tomorrow);
+
+        // 7️⃣ Comparing Dates
+        let date1 = new Date("2025-03-03");
+        let date2 = new Date("2025-03-02");
+
+        if (date1 > date2) {
+            console.log("Date1 is greater than Date2");
+        } else {
+            console.log("Date2 is greater than Date1");
+        }
+
+        // 8️⃣ Date Difference in Days
+        let diff = date1 - date2; // Difference in milliseconds
+        let diffDays = diff / (1000 * 60 * 60 * 24);
+        console.log("Difference in Days:", diffDays);
+    </script>
+</body>
+</html>

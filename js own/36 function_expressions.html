@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //function declaration=defines a reusble block of code that performs a specific task
+        hello();
+        function hello(){
+            console.log("hello balu");
+        }
+        
+        let num=[1,2,3,4,5];
+        let even=num.filter(evenfun);
+        function evenfun(e){
+           return e%2===0;
+        }
+        console.log(even);
+
+        //function expressions=a way to define functions as values or variables
+        
+        let odd=num.filter(function(e){
+            return e%2!==0;
+        });
+        console.log(odd);
+
+        
+    </script>
+</body>
+</html>

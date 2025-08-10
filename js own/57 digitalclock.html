@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            background-image: url('https://tse3.mm.bing.net/th?id=OIP.x-ibkw-Kpzz3LV8WfR0W7QHaEo&pid=Api&P=0&h=180'); /* Optional background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: monospace;
+        }
+        #clock-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        #clock {
+            font-size: 6.5rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            background-color: hsla(0, 0%, 100%, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="clock-container">
+    <div id="clock">00:00:00</div>
+</div>
+<script>
+    function updateClock() {
+        const now = new Date();
+        let hours = now.getHours();
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        const meridian = hours >= 12 ? 'PM' : 'AM';
+
+        hours = hours % 12 || 12; // Convert to 12-hour format
+        hours = hours.toString().padStart(2, '0');
+
+        const timeString = `${hours}:${minutes}:${seconds} ${meridian}`;
+        document.getElementById('clock').textContent = timeString;
+    }
+
+    updateClock(); // Initial call
+    setInterval(updateClock, 1000); // Update every second
+</script>
+</body>
+</html>

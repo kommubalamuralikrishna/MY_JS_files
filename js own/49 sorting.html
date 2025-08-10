@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //sort()=method used to sort elements of an array in place.
+        //sort elements as strings in lexicographical order not alphabetical
+        //lexicographic=(alphabet+numbers+symbols) as strings
+        
+        let num=[1,9,10,8,7,6];
+        num.sort((a,b)=>a-b);   // Ascending order
+        console.log(num);
+        
+        num.sort((a,b)=>b-a);   // Descending order
+        console.log(num);
+        
+        let people=[
+            {name:"balu",age:20},
+            {name:"kavya",age:19},
+            {name:"veeru",age:18}
+        ];
+        
+        // Sorting by age
+        people.sort((a,b)=>a.age-b.age);
+        console.log(people);
+        
+        // Sorting by name (alphabetical order)
+        let people2=[
+            {name:"balu",age:20},
+            {name:"kavya",age:19},
+            {name:"veeru",age:18}
+        ];
+        people2.sort((a,b)=>a.name.localeCompare(b.name));
+        console.log(people2);
+    </script>
+</body>
+</html>

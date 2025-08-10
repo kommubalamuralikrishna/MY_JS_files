@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grading System</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 100px;
+            font-size: 1.5em;
+        }
+        input {
+            padding: 10px;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: aqua;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: brown;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h1>Grading System</h1>
+<input type="number" id="marks" placeholder="Enter Marks">
+<button onclick="getGrade()">Get Grade</button>
+<div id="result"></div>
+
+<script>
+    function getGrade() {
+        let marks = Number(document.getElementById("marks").value);
+        let grade;
+
+        switch (true) {
+            case (marks >= 90 && marks <= 100):
+                grade = "A";
+                break;
+            case (marks >= 80 && marks < 90):
+                grade = "B";
+                break;
+            case (marks >= 60 && marks < 80):
+                grade = "C";
+                break;
+            case (marks >= 40 && marks < 60):
+                grade = "D";
+                break;
+            case (marks >= 0 && marks < 40):
+                grade = "Fail";
+                break;
+            default:
+                grade = "Invalid Marks";
+        }
+
+        document.getElementById("result").textContent = "Grade: " + grade;
+    }
+</script>
+</body>
+</html>

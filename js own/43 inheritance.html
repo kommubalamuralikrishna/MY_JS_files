@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //inheritance allows a new class to inherit properties and methods from an existing class (parent->child)
+        //helps in code reusability
+        class animal{
+            alive=true;
+            eat(){
+                console.log(`${this.name} is eating`);
+            }
+            sleep(){
+                console.log(`${this.name} is sleeping`);
+            }
+        }
+        class dog extends animal{
+            name="dog";
+            legs(){
+                console.log(`${this.name} have 4 legs`);
+            }
+        }
+        class cat extends dog{
+            name="cat";
+            sound(){
+                console.log("meow");
+            }
+        }
+        let c1=new cat();
+        console.log(c1.name);
+        console.log(c1.alive);
+        c1.sound();
+        c1.legs();
+        let d1=new dog();
+        console.log(d1.name);
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>setTimeout Example</title>
+</head>
+<body>
+  <button onclick="startTimer()">Start</button>
+  <button onclick="clearTimer()">Clear</button>
+  <script>
+    let timeoutID; // Declare Timeout ID globally
+
+function startTimer() {
+  console.log("Started");
+  timeoutID = setTimeout(() => {
+    alert("Hello");
+  }, 3000); // 3 seconds delay
+}
+
+function clearTimer() {
+  console.log("Cleared");
+  clearTimeout(timeoutID); // Cancel Timeout
+}
+
+  </script>
+</body>
+</html>

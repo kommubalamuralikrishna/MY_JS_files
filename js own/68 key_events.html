@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Key Events</title>
+    <style>
+        /* Styling for the box that reacts to key events */
+        #myBox {
+            background-color: lightblue;
+            width: 200px;
+            height: 200px;
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Needed for movement */
+        }
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent scrolling */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- The box that changes when key events occur -->
+    <div id="myBox">😀</div>
+
+    <script>
+        // Select the div element by its ID
+        const myBox = document.getElementById("myBox");
+
+        // Variables for movement
+        let moveAmount = 10; // Number of pixels moved per key press
+        let x = 0; // Horizontal position
+        let y = 0; // Vertical position
+
+        // Event listener for key down (when a key is pressed)
+        document.addEventListener("keydown", (event) => {
+            console.log(event); // Log the event object to see details
+
+            // Prevent default behavior of arrow keys (scrolling)
+            event.preventDefault();
+
+            // Change the box's content and color on key press
+            myBox.textContent = "😲"; // Shocked emoji
+            myBox.style.backgroundColor = "tomato";
+
+            // Move the box based on arrow key presses
+            switch (event.key) {
+                case "ArrowUp":
+                    y -= moveAmount; // Move up
+                    break;
+                case "ArrowDown":
+                    y += moveAmount; // Move down
+                    break;
+                case "ArrowLeft":
+                    x -= moveAmount; // Move left
+                    break;
+                case "ArrowRight":
+                    x += moveAmount; // Move right
+                    break;
+            }
+
+            // Apply new position values
+            myBox.style.top = `${y}px`;
+            myBox.style.left = `${x}px`;
+        });
+
+        // Event listener for key up (when a key is released)
+        document.addEventListener("keyup", () => {
+            // Reset the box's content and color when key is released
+            myBox.textContent = "😀"; // Happy emoji
+            myBox.style.backgroundColor = "lightblue";
+        });
+
+    </script>
+
+</body>
+</html>

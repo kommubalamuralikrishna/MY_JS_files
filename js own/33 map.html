@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //map=accepts the callback and applies the function to each element as like as forEach
+        //but forEAch modifies or display's the array
+        //map returns the modifies array to the new array (origina array cannot be changed)
+        let fruits=["apple","banana","orange"];
+        console.log(fruits);
+        let food = fruits.map(capitalize);
+        console.log(food);
+        function capitalize(element){
+            return element.charAt(0).toUpperCase()+element.slice(1);
+        }
+
+    </script>
+</body>
+</html>

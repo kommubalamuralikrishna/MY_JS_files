@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //filter ->creaes a new array by filtering the array
+        let num=[1,2,3,4,5,6,7,8,9,10];
+        let even=num.filter(evenfun);
+        let odd=num.filter(oddfun);
+        console.log(even);
+        console.log(odd);
+        function evenfun(element){
+            return element%2===0;
+        }
+        function oddfun(element){
+            return element%2!==0;
+        }
+        let home=["kommu balu","kommu satya","kommu ammanna","chelli kavya","chelli srinivasrao"];
+        let kommu=home.filter(kommus);
+        let chelli=home.filter(chellis);
+        console.log(`kommu's family:${kommu}`);
+        console.log(`chelli's family:${chelli}`);
+
+        function kommus(e){
+            return e.slice(0,e.indexOf(' '))==="kommu";
+        }
+        function chellis(e){
+            return e.slice(0,e.indexOf(' '))==="chelli";
+        }
+    </script>
+</body>
+</html>
